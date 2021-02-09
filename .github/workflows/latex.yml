@@ -1,0 +1,25 @@
+name: Build LaTeX document
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    name: Build PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+
+      - name: Upload compile PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.event.repository.name }}-PDF
+          path: main.pdf
