@@ -7,6 +7,17 @@
 * Concordia University
 * Montreal, QC, CA
 
+## Downland Compiled PDF
+
+To download the latest compiled PDF file:
+
+* Open the **Actions** tab. 
+* Then select the latest commit workflow (the first item in the list).
+* You should see an artifact file named `{Your-Repo-Name}-PDF`; click on it to download a `zip` file that contains the pdf file.
+
+By default, Github will delete artifact files after 90 days. If the last commit is older than 90 days, it probably does not have the PDF file. You can click on `Re-run all jobs` to rebuild the commit.
+
+
 ## Introduction
  This thesis template has been created to make it easy to prepare your thesis using LaTeX while adhering to the [Concordia University Thesis Specifications posted online](https://www.concordia.ca/artsci/english/programs/graduate/english-ma/thesis-deadlines-formatting.html#format). The official thesis examples are provided here as a PDF file: http://www.concordia.ca/content/dam/concordia/offices/sgs/docs/handbooks/thesispreparationguide.pdf. Please refer to the last few pages for the thesis example.
 
