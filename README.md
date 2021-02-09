@@ -7,7 +7,7 @@
 * Concordia University
 * Montreal, QC, CA
 
-## Downland Compiled PDF
+## Download Compiled PDF
 
 To download the latest compiled PDF file:
 
