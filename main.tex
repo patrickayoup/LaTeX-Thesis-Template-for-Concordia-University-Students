@@ -64,6 +64,7 @@
 
 \author{Suo Tan}    % your full name. Defaut: Suo Tan
 \title{A \LaTeX{} Thesis Template for ENCS Graduate Student from Concordia University}    % your thesis title
+\documentType{A Thesis} % or A Doctoral Research Proposal, A Comprehensive Exam Report, etc. Default: A Thesis
 \mastersDegree{Master of Applied Science}  % For master's degree only, will be ignored if PhD.  Default: Master of Applied Science
 %%% Following two lines are required for Ph.D. thesis. %%%
 \titleOfPhDAuthor{Mr.}         % or Ms., Mrs., Miss, etc. (only for PhD's)
@@ -94,8 +95,11 @@
 %       \citep{key1,key2}  	==>>     (Jones et al., 1990; Smith, 1989)
 
 %%%%%%%%%% Pages with Roman Numerals %%%%%%%%%
+\coverPage
+\signaturePage
 \include{Abstract}
 \include{Acknowledgements}
+\contentLists
 
 %%%%%%%%%% Body of Thesis %%%%%%%%%%%%%%%%
 \include{Chapter_1}

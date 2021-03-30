@@ -19,9 +19,9 @@
 %           - Refined and updated to modern requirements
 %            
 %    by    Suo Tan (tandysony@gmail.com)                                                                 
-%            Design Lab, ENCS                                                                          				   
-%            Concordia University                                                                       				    
-%            Montreal, QC, CA                                                                           				     
+%            Design Lab, ENCS                                                                                          
+%            Concordia University                                                                                           
+%            Montreal, QC, CA                                                                                                
 %            Oct. 20, 2015 
 % ---------------------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@
 
 \brokenpenalty=10000
 
-\usepackage{times}
+% \usepackage{times}
 
 % for figures  & tables numbered in the conventional report style (chapter.number)
 % comment the above 3 lines and uncomment the following line:
@@ -58,6 +58,7 @@
 \def\chairOfDept#1{\gdef\@chairOfDept{#1}}
 \def\program#1{\gdef\@program{#1}}
 \def\program#1{\gdef\@program{#1}}
+\def\documentType#1{\gdef\@documentType{#1}}
 \def\mastersDegree#1{\gdef\@mastersDegree{#1}}
 \def\dept#1{\gdef\@dept{#1}}
 \def\myCoSupervisor#1{\gdef\@myCoSupervisor{#1}}
@@ -71,6 +72,7 @@
 %
 \def\@title{A \LaTeX{} Thesis Template for ENCS Graduate Student from Concordia University}
 \def\@author{Suo Tan}
+\def\@documentType{A Thesis}
 \def\@mastersDegree{Master of Applied Science}
 \def\@program{}\def\@dept{Mechanical and Industrial Engineering}
 \def\@principaladviser{Yong Zeng}
@@ -122,11 +124,11 @@
         \end{center}
         \vskip.5in
         \begin{center}
-                 \bf \@author
+                 \bf\@author
         \end{center}
         \vskip.5in
         \begin{center}
-            \bf A Thesis\\
+            \bf\@documentType\\
             in\\
             The Department\\
             of\\
@@ -163,7 +165,7 @@ of Doctor of Philosophy.
 \end{minipage}
 \end{center}}
 
-\def\signaturepage{%
+\def\signaturePage{%
     \begin{center}
         {\Large \sc Concordia University}\\
         {\large School of Graduate Studies}
@@ -211,21 +213,21 @@ of Doctor of Philosophy.
     \hspace*{3cm} \raisebox{.1cm}{\parbox[t]{4in}{\@chairOfDept, Chair \\ Department of \@dept}} \\ 
     \vspace{.2in}
     \begin{tabbing}
-   	\hspace*{6.5cm} \= \kill
-   	\makebox[1.2in]{\hrulefill } \the\year  \>  \makebox[3.13in][l]{\hrulefill} \\
-   	     \> \raisebox{.1cm}{\parbox[t]{4in}{\@deanOfENCS, Dean \\
-   		Faculty of Engineering and Computer Science}}
+    \hspace*{6.5cm} \= \kill
+    \makebox[1.2in]{\hrulefill } \the\year  \>  \makebox[3.13in][l]{\hrulefill} \\
+         \> \raisebox{.1cm}{\parbox[t]{4in}{\@deanOfENCS, Dean \\
+        Faculty of Engineering and Computer Science}}
     \end{tabbing}
   \end{singlespace}
 }
 
-\def\beforepreface{
+\def\coverPage{
         \pagenumbering{roman}
         \pagestyle{plain}
         \thispagestyle{empty}
         \titlep
         \thispagestyle{empty}
-        \signaturepage}
+}
 
 \def\mastersabstract{%
         \thispagestyle{empty}
@@ -271,7 +273,7 @@ of Doctor of Philosophy.
 %       \addcontentsline{toc}{chapter}{#1}
 }
 
-\def\afterpreface{\newpage
+\def\contentLists{\newpage
         \tableofcontents
         \newpage
         \iffigurespage
@@ -301,11 +303,9 @@ of Doctor of Philosophy.
 }
 
 \renewenvironment{abstract}
-       {\beforepreface
-        \ifphd\phdabstract\else\mastersabstract\fi}
+       {\ifphd\phdabstract\else\mastersabstract\fi}
        {}
+
 \newenvironment{acknowledgments}
        {\prefacesection{Acknowledgments}}
-       {\afterpreface}
-
 \makeatother
