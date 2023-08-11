@@ -188,17 +188,17 @@ of Doctor of Philosophy.
     \begin{singlespace}
     \noindent \hspace*{3cm} \hrulefill \makebox[4cm][l]{ Chair} \\
     \hspace*{3cm} \raisebox{.1cm}{\makebox[4cm][l]{\it Dr. \@chairOfCommittee}} \\
+    \ifphd
     \newline 
     \hspace*{3cm} \hrulefill \makebox[4cm][l]{ External Examiner} \\
     \hspace*{3cm} \raisebox{.1cm}{\makebox[4cm][l]{\it Dr. \@examinerExternalOfCommittee}} \\
+    \fi
     \newline 
     \hspace*{3cm} \hrulefill \makebox[4cm][l]{ Examiner} \\
     \hspace*{3cm} \raisebox{.1cm}{\makebox[4cm][l]{\it Dr. \@examinerFirstOfCommittee}} \\
-    \ifphd%
     \newline 
     \hspace*{3cm} \hrulefill \makebox[4cm][l]{ Examiner} \\
     \hspace*{3cm} \raisebox{.1cm}{\makebox[4cm][l]{\it Dr. \@examinerSecondOfCommittee}} \\
-    \fi%
     \newline 
     \hspace*{3cm} \hrulefill \makebox[4cm][l]{ Supervisor}\\
     \hspace*{3cm} \raisebox{.1cm}{\makebox[4cm][l]{\it Dr. \@principaladvisor}} \\
@@ -230,7 +230,6 @@ of Doctor of Philosophy.
 }
 
 \def\mastersabstract{%
-        \thispagestyle{empty}
         \newpage
         \null\vskip.25in%
         \begin{center}
@@ -305,7 +304,17 @@ of Doctor of Philosophy.
 \renewenvironment{abstract}
        {\ifphd\phdabstract\else\mastersabstract\fi}
        {}
+       
+\newenvironment{statement}
+        {\prefacesection{Statement of Originality}}
+
+\newenvironment{dedication}
+       {\prefacesection{Dedication}} 
 
 \newenvironment{acknowledgments}
        {\prefacesection{Acknowledgments}}
+
+\newenvironment{publications}
+       {\prefacesection{Related Submitted Publications}}
+
 \makeatother
